@@ -529,26 +529,19 @@ footer{padding:1.1rem 3.5rem;border-top:1px solid var(--b1);display:flex;justify
   .hero-btns{gap:.35rem}
   .hero-scroll{display:none}
   
-  /* ABOUT MOBILE FIX — badge sits to the right of photo */
+  /* ABOUT MOBILE — overlay badge like desktop */
   .about-grid{grid-template-columns:1fr;gap:1.4rem}
   .about-img-wrap{
     display:flex;
-    flex-direction:row;
-    align-items:flex-start;
-    gap:1rem;
-    flex-wrap:nowrap;
+    justify-content:center;
   }
   .about-frame{
-    width:88px;
-    height:88px;
-    aspect-ratio:1/1;
-    border-radius:var(--r2);
-    flex-shrink:0;
-    flex-grow:0;
-    min-width:88px;
-    max-width:88px;
-    overflow:visible;        /* Allow badge to extend outside */
+    width:140px;               /* Slightly larger for visibility */
+    aspect-ratio:3/4;
+    border-radius:var(--r3);
+    overflow:hidden;           /* Keep overlay contained */
     position:relative;
+    border:1px solid var(--b2);
   }
   .about-photo{
     width:100%;
@@ -556,30 +549,24 @@ footer{padding:1.1rem 3.5rem;border-top:1px solid var(--b1);display:flex;justify
     object-fit:cover;
     object-position:center top;
     display:block;
-    position:absolute;
-    inset:0;
-    border-radius:var(--r2);
   }
   .about-frame-inner{display:none}
+  
+  /* Badge stays at bottom, just like desktop */
   .exp-badge{
     position:absolute;
-    left:100%;               /* Place to the right of photo */
-    top:0;
-    margin-left:1rem;        /* Gap between photo and badge */
-    width:auto;
-    min-width:80px;
-    border:1px solid var(--b2);
-    border-radius:var(--r2);
-    background:rgba(8,5,20,.92);
-    padding:.55rem .75rem;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:.08rem;
-    flex-shrink:0;
-    flex-grow:0;
-    white-space:nowrap;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:.55rem .6rem;
+    background:rgba(8,5,20,.88);
+    border-top:1px solid var(--b2);
     backdrop-filter:blur(8px);
     -webkit-backdrop-filter:blur(8px);
+    display:flex;
+    align-items:baseline;
+    gap:.4rem;
+    border-radius:0;           /* Flush with frame bottom */
   }
   .exp-num{font-size:1.2rem}
   
